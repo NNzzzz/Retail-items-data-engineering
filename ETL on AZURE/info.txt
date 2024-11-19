@@ -1,0 +1,6 @@
+selected resource name:		pipeline1
+selected resource type:		pipeline
+factory name:			Mahmoud
+factory location:		eastus
+subscription id:		dbb116b8-2b12-475d-85d0-b28f326f7a6f
+time of download (UTC):		Sat, 12 Oct 2024 17:20:38 GMT

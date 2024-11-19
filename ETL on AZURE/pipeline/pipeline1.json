@@ -1,0 +1,168 @@
+{
+    "name": "pipeline1",
+    "properties": {
+        "activities": [
+            {
+                "name": "customers",
+                "type": "ExecuteDataFlow",
+                "state": "Inactive",
+                "onInactiveMarkAs": "Succeeded",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "customers",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            },
+            {
+                "name": "products",
+                "type": "ExecuteDataFlow",
+                "state": "Inactive",
+                "onInactiveMarkAs": "Succeeded",
+                "dependsOn": [
+                    {
+                        "activity": "customers",
+                        "dependencyConditions": [
+                            "Completed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "products",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            },
+            {
+                "name": "countries",
+                "type": "ExecuteDataFlow",
+                "state": "Inactive",
+                "onInactiveMarkAs": "Succeeded",
+                "dependsOn": [
+                    {
+                        "activity": "products",
+                        "dependencyConditions": [
+                            "Completed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "countries",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            },
+            {
+                "name": "date",
+                "type": "ExecuteDataFlow",
+                "state": "Inactive",
+                "onInactiveMarkAs": "Succeeded",
+                "dependsOn": [
+                    {
+                        "activity": "countries",
+                        "dependencyConditions": [
+                            "Completed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "date",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            },
+            {
+                "name": "factsales",
+                "type": "ExecuteDataFlow",
+                "state": "Inactive",
+                "onInactiveMarkAs": "Succeeded",
+                "dependsOn": [
+                    {
+                        "activity": "date",
+                        "dependencyConditions": [
+                            "Completed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "factsales",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2024-10-11T14:04:55Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}

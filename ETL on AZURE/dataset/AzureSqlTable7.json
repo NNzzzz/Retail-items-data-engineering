@@ -1,0 +1,57 @@
+{
+    "name": "AzureSqlTable7",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureSqlDatabase1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "AzureSqlTable",
+        "schema": [
+            {
+                "name": "countries_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "customers_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "products_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "date_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "order_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "sales_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "p_weight",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "s_quantity",
+                "type": "int",
+                "precision": 10
+            }
+        ],
+        "typeProperties": {
+            "schema": "dbo",
+            "table": "fact_sales"
+        }
+    }
+}

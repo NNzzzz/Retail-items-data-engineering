@@ -1,0 +1,32 @@
+{
+    "name": "AzureSqlTable2",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureSqlDatabase1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "AzureSqlTable",
+        "schema": [
+            {
+                "name": "product_id",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "product_number",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "p_name",
+                "type": "nvarchar"
+            }
+        ],
+        "typeProperties": {
+            "schema": "dbo",
+            "table": "product_dim"
+        }
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

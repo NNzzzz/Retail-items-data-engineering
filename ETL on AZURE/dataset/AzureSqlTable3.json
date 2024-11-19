@@ -1,0 +1,31 @@
+{
+    "name": "AzureSqlTable3",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureSqlDatabase1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "AzureSqlTable",
+        "schema": [
+            {
+                "name": "country_id",
+                "type": "nvarchar"
+            },
+            {
+                "name": "c_name",
+                "type": "nvarchar"
+            },
+            {
+                "name": "c_population",
+                "type": "int",
+                "precision": 10
+            }
+        ],
+        "typeProperties": {
+            "schema": "dbo",
+            "table": "country_dim"
+        }
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

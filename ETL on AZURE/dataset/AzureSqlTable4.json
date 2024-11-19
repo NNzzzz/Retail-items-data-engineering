@@ -1,0 +1,37 @@
+{
+    "name": "AzureSqlTable4",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureSqlDatabase1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "AzureSqlTable",
+        "schema": [
+            {
+                "name": "date_id",
+                "type": "date"
+            },
+            {
+                "name": "year",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "month",
+                "type": "int",
+                "precision": 10
+            },
+            {
+                "name": "day",
+                "type": "int",
+                "precision": 10
+            }
+        ],
+        "typeProperties": {
+            "schema": "dbo",
+            "table": "date_dim"
+        }
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

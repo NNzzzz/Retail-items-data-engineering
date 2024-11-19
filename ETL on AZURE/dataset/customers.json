@@ -1,0 +1,53 @@
+{
+    "name": "customers",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureBlobStorage1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "fileName": "coustmers.csv",
+                "container": "sales"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "CustomerId",
+                "type": "String"
+            },
+            {
+                "name": "Active",
+                "type": "String"
+            },
+            {
+                "name": "Name",
+                "type": "String"
+            },
+            {
+                "name": "Address",
+                "type": "String"
+            },
+            {
+                "name": "City",
+                "type": "String"
+            },
+            {
+                "name": "Country",
+                "type": "String"
+            },
+            {
+                "name": "Email",
+                "type": "String"
+            }
+        ]
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

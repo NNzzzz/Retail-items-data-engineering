@@ -1,0 +1,113 @@
+{
+    "name": "DelimitedText1",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureBlobStorage1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "fileName": "countries.csv",
+                "container": "sales"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "Country",
+                "type": "String"
+            },
+            {
+                "name": "Currency",
+                "type": "String"
+            },
+            {
+                "name": "Name",
+                "type": "String"
+            },
+            {
+                "name": "Region",
+                "type": "String"
+            },
+            {
+                "name": "Population",
+                "type": "String"
+            },
+            {
+                "name": "Area (sq. mi.)",
+                "type": "String"
+            },
+            {
+                "name": "Pop. Density (per sq. mi.)",
+                "type": "String"
+            },
+            {
+                "name": "Coastline (coast per area ratio)",
+                "type": "String"
+            },
+            {
+                "name": "Net migration",
+                "type": "String"
+            },
+            {
+                "name": "Infant mortality (per 1000 births)",
+                "type": "String"
+            },
+            {
+                "name": "GDP ($ per capita)",
+                "type": "String"
+            },
+            {
+                "name": "Literacy (%)",
+                "type": "String"
+            },
+            {
+                "name": "Phones (per 1000)",
+                "type": "String"
+            },
+            {
+                "name": "Arable (%)",
+                "type": "String"
+            },
+            {
+                "name": "Crops (%)",
+                "type": "String"
+            },
+            {
+                "name": "Other (%)",
+                "type": "String"
+            },
+            {
+                "name": "Climate",
+                "type": "String"
+            },
+            {
+                "name": "Birthrate",
+                "type": "String"
+            },
+            {
+                "name": "Deathrate",
+                "type": "String"
+            },
+            {
+                "name": "Agriculture",
+                "type": "String"
+            },
+            {
+                "name": "Industry",
+                "type": "String"
+            },
+            {
+                "name": "Service",
+                "type": "String"
+            }
+        ]
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

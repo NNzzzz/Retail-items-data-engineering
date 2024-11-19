@@ -1,0 +1,40 @@
+{
+    "name": "DelimitedText4",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureDataLakeStorage1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": "sales.csv",
+                "fileSystem": "sales"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "SaleId",
+                "type": "String"
+            },
+            {
+                "name": "OrderId",
+                "type": "String"
+            },
+            {
+                "name": "ProductId",
+                "type": "String"
+            },
+            {
+                "name": "Quantity",
+                "type": "String"
+            }
+        ]
+    }
+}
